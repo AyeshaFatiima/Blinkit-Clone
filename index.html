@@ -1,0 +1,321 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Everything delivered in minutes | Blinkit</title>
+    <link rel="icon"href="https://upload.wikimedia.org/wikipedia/commons/2/2f/Blinkit-yellow-app-icon.svg">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+    <link rel="stylesheet"href="style.css">
+    <link rel="stylesheet"href="media.css">
+</head>   
+<body> 
+    
+    <header>
+        <div class="headerLeft">
+            <div class="logo">
+            <img src="blinkit.com_.png"> 
+        </div>
+        <div class="headerAddress" onclick="openLocationModal()">
+            <h3>Delivery in 8 minutes</h3>
+            <div class="header-loc">
+            <p>Civil Lines, Prayagraj, Utt..</p>
+            <i class="fa-solid fa-caret-down"></i>
+        </div>
+        </div>
+    </div>
+            <form class="searchBox">
+                <button><i class="fa-solid fa-magnifying-glass"></i></button>
+                <input type="text"id="searchInput">
+                <div class="placeholder-container"id="placeholderContainer">
+                    <span class="animated-placeholder"id="animatedPlaceholder">Search "chips"</span>
+                </div>
+            </form>
+        <div class="headerBtn">
+            <!-- <a href="login.html" class="login">Login</a> -->
+            <button class="login"onclick="openModal()">Login</button>
+            <div class="cart-content">
+            <button id="cart-btn" onclick="openCart()"><i class="fa-solid fa-cart-shopping"></i>Cart</button>
+        </div>
+        </div>
+    </header>
+
+
+<!-- Location Container -->
+<div id="locationModalOverlay">
+    <div class="location-modal-container">
+        <i class="fa-solid fa-xmark close-icon" id="loc-icon"onclick="closeLocationModal()"></i>
+        <div class="location-container">
+            <h5>Change Location</h5>
+            <div class="location-btn">
+                <button class="detect">Detect my location</button>
+                <div class="or-cont">
+                <p class="or">OR</p>
+            </div>
+                <input type="text" placeholder="search delivery location">
+            </div>
+        </div>
+    </div>
+</div> 
+
+
+<!-- login page -->
+     <div id="modalOverlay" onclick="closeModalOnOutsideClick(event)">
+        <div class="modal-container" onclick="event.stopPropagation()">
+            <i class="fa-solid fa-arrow-left back-arrow" onclick="closeModal()"></i>
+            <div class="modal-content">
+                <div class="modal-logo">
+                    <img class="log-logo"src="https://upload.wikimedia.org/wikipedia/commons/2/2f/Blinkit-yellow-app-icon.svg">
+                </div>
+                <h2 class="modal-title">India's last minute app</h2>
+                <p class="modal-subtitle">Log in or Sign up</p>
+                <div class="phone-input-wrapper">
+                    <span class="country-code">+91</span>
+                    <input type="tel"class="phone-input" id="phoneInput"placeholder="   Enter mobile number" maxlength="10" oninput="validatePhone()" >
+                </div>
+                <button class="continue-btn" id="continueBtn" disabled>
+                    Continue
+                </button>
+                <p class="terms">By continuing, you agree to our <a href="#">Terms of service</a> & <a href="#">Privacy policy</a></p>
+            </div>
+            </div>
+        </div>
+
+
+<!-- Cart Page -->
+    
+   <div id="cartModal">
+    <div class="cart-header">
+            <h1>My Cart</h1>
+            <i class="fa-solid fa-xmark" onclick="closeCart()"></i>
+        </div>
+
+    <div class="delivery-info">
+        <i class="fa-solid fa-clock"></i>
+        <div>
+        <h3>Delivery in 8 minutes</h3>
+        <p>Shipment of <span id="itemCount">0</span> items</p>
+            </div>
+        </div>
+
+        <div class="cart-items"id="cartItems">
+
+        </div>
+
+       <div class="cart-footer" id="cartFooter" style="display: none;">
+            <div class="bill-details">
+                <h3>Bill details</h3>
+                <div class="bill-row">
+                    <span>Items total</span>
+                    <span>₹<span id="itemsTotal">0</span></span>
+                </div>
+                <div class="bill-row">
+                    <span> Delivery charge </span>
+                    <span>₹25</span>
+                </div>
+                <div class="bill-row">
+                    <span> Handling charge</span>
+                    <span>₹2</span>
+                </div>
+                <div class="bill-row">
+                    <span> Small cart charge </span>
+                    <span>₹3</span>
+                </div>
+                <div class="bill-row total">
+                    <span>Grand total</span>
+                    <span>₹<span id="grandTotal">0</span></span>
+                </div>
+            </div>
+            <button class="checkout-btn">
+                <span>Place Order</span>
+                <span class="price">₹<span id="checkoutTotal">0</span></span>
+            </button>
+        </div>        
+</div>
+
+
+<!-- Banner Section -->
+    <section class="bannerSection">
+        <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=2700/layout-engine/2022-05/Group-33704.jpg"alt="">
+    </section>
+
+    <section class="orderBanner">
+        <div class="orderBannerItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/pharmacy-WEB.jpg"alt="">
+        </div>
+        <div class="orderBannerItems">
+             <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-07/Pet-Care_WEB.jpg"alt="">
+        </div>
+        <div class="orderBannerItems">
+             <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=720/layout-engine/2023-03/babycare-WEB.jpg"alt="">
+        </div>
+    </section>
+
+    <section class="categorySection">
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-12/paan-corner_web.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-2_10.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-3_9.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-4_9.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-5_4.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-6_5.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-7_3.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-8_4.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2025-11/Slice-7-1_0.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-10.png">
+        </div>
+
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-11.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-12.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-13.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-14.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-15.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-16.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-17.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-18.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-19.png">
+        </div>
+        <div class="categoryItems">
+            <img src="https://cdn.grofers.com/cdn-cgi/image/f=auto,fit=scale-down,q=70,metadata=none,w=225/layout-engine/2022-11/Slice-20.png">
+        </div>
+    </section> 
+
+
+    <!-- Main Container -->
+<main id="productsContainer"></main> 
+    
+
+<!-- Footer Section -->
+    <footer>
+        <div class="footer-mid-row1">
+            <div class="footer-mid-row1-left">
+                <h3>Useful Links</h3>
+                <div class="useFullLinks">
+                    <ul>
+                        <li><a href="#">About</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Blog</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Lead</a></li>
+                        <li><a href="#">Value</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Privacy</a></li>
+                        <li><a href="#">Terms</a></li>
+                        <li><a href="#">FAQs</a></li>
+                        <li><a href="#">Security</a></li>
+                        <li><a href="#">Mobile</a></li>
+                        <li><a href="#">Contact</a></li>
+                    </ul>
+                    <ul>
+                        <li><a href="#">Partner</a></li>
+                        <li><a href="#">Franchise</a></li>
+                        <li><a href="#">Seller</a></li>
+                        <li><a href="#">Warehouse</a></li>
+                        <li><a href="#">Deliver</a></li>
+                        <li><a href="#">Resources</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-mid-row1-right">
+                <div class="categoriesHeadingRow">
+                <h3>Categories</h3>
+                <a href="">See all</a>
+            </div>
+             <div class="footer-mid-row1-left">
+                <!-- <h3>Useful Links</h3> -->
+                <ul type="col" class="FooterLinks__List">
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/fresh-vegetables/cid/1487/1489">Vegetables &amp; Fruits</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/milk/cid/14/922">Dairy &amp; Breakfast</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/chips-crisps/cid/1237/940">Munchies</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/beverages-gift-packs/cid/332/1323">Cold Drinks &amp; Juices</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/noodles/cid/15/962">Instant &amp; Frozen Food</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/tea/cid/12/957">Tea, Coffee &amp; Milk Drinks</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/biscuit-gift-pack/cid/888/2380">Bakery &amp; Biscuits</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/indian-sweets/cid/9/943">Sweet Tooth</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/atta/cid/16/1165">Atta, Rice &amp; Dal</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/oil/cid/1557/917">Dry Fruits, Masala &amp; Oil</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/tomato-chilli-ketchup/cid/972/277">Sauces &amp; Spreads</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/eggs/cid/4/1200">Chicken, Meat &amp; Fish</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/cigarettes/cid/229/1948">Paan Corner</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/oil-ghee/cid/175/799">Organic &amp; Premium</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/diapers-more/cid/7/1000">Baby Care</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/sexual-wellness/cid/287/741">Pharma &amp; Wellness</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/fabric-conditioner-additives/cid/18/985">Cleaning Essentials</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/spiritual-religious-needs/cid/1379/1048">Home Furnishing &amp; Decor</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/face-body-moisturizers/cid/163/690">Personal Care</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/accessories-other-supplies/cid/5/3609">Pet Care</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/body-skin-care/cid/13/206">Beauty &amp; Cosmetics</a>
+                    </li><li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/juicers-mixers-grinders/cid/8058/1882">Kitchen &amp; Dining</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/bags/cid/5305/120">Fashion &amp; Accessories</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/appliances/cid/5159/1886">Electronics &amp; Electricals</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/arts-crafts/cid/5515/5516">Stationery Needs</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/activity-books-for-adults/cid/1559/516">Books</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/action-figures/cid/675/397">Toys &amp; Games</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/print">Print Store</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/cn/e-cards/cid/416/4301">E-Gift Cards</a></li>
+                    <li class="FooterLinks__ListItem-sc-12rhzht-3 BvTiN"><a href="/dc/?collection_uuid=4981b5da-20ea-439a-bd29-4a13e3b59f82">Rakhi Gifts</a></li>
+                </ul>
+            </div>
+            </div>
+        </div>
+        <div class="footer-mid-row2">
+            <p>© Blink Commerce Private Limited, 2016-2025</p>
+            <div class="appIcons">
+                <h5>Download App</h5>
+                <img width="100" src="https://blinkit.com/d61019073b700ca49d22.png">
+                <img width="100"src="https://blinkit.com/8ed033800ea38f24c4f0.png">
+            </div>
+            <div class="sLinks">
+                <i class="fa-brands fa-facebook-f"></i>
+                <i class="fa-brands fa-x-twitter"></i>
+                <i class="fa-brands fa-instagram"></i>
+                <i class="fa-brands fa-linkedin"></i>
+                <i class="fa-brands fa-threads"></i>
+            </div>
+        </div>
+        <div class="footer-mid-row3">
+            <p>“Blinkit” is owned &amp; managed by "Blink Commerce Private Limited" and is not related, linked or interconnected in whatsoever manner or nature, to “GROFFR.COM” which is a real estate services business operated by “Redstone Consultancy Services Private Limited”.</p>
+        </div> 
+    </footer>
+
+    <script src="data.js"></script>
+    <script src="product.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
