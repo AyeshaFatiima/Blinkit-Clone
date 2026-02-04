@@ -2,6 +2,7 @@
 
 A fully functional and responsive clone of Blinkit (formerly Grofers), built with **HTML**, **CSS**, and **Vanilla JavaScript**. This project demonstrates modern web development practices with a focus on user experience and clean code architecture.
 
+**Live Demo:** (https://blinkit-clone-silk-ten.vercel.app/)
 
 ### Features
 
