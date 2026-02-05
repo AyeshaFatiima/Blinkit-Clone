@@ -6,7 +6,7 @@ A fully functional and responsive clone of Blinkit (formerly Grofers), built wit
 
 ### Features
 
-### 🎯 Core Features
+###  Core Features
 - **Responsive Design** - Works perfectly on Mobile, Tablet, and Desktop
 - **Dynamic Product Rendering** - Products loaded from centralized data file
 - **Shopping Cart** - Full-featured cart with add, remove, and quantity controls
@@ -16,7 +16,7 @@ A fully functional and responsive clone of Blinkit (formerly Grofers), built wit
 - **Location Modal** - Delivery location selection
 - **Login Modal** - User authentication interfac
   
-### 🛍️ Shopping Features
+###  Shopping Features
 - **Multiple Product Categories**
   - Dairy, Bread & Eggs
   - Snacks & Munchies
@@ -28,7 +28,7 @@ A fully functional and responsive clone of Blinkit (formerly Grofers), built wit
 - **Cart Management** - Increase/decrease quantities, auto-remove on zero
 - **Bill Calculation** - Auto-calculated totals with delivery charges
 
-### 🎨 UI/UX Features
+###  UI/UX Features
 - **Fixed Navigation** - Sticky header for easy access
 - **Modal Overlays** - Clean modal interfaces for cart and location
 - **Animated Placeholders** - Rotating search suggestions
